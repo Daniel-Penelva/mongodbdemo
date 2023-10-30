@@ -1,1 +1,10 @@
+spring:
+  data:
+    mongodb:
+      username: admin
+      password: pass
+      host: localhost
+      port: 27017
+      database: mongodbdemo
+      authentication-database: admin
 
