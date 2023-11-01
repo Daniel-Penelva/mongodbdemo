@@ -4,7 +4,10 @@ spring:
       username: admin
       password: pass
       host: localhost
-      port: 27017
+      port: 27018
       database: mongodbdemo
       authentication-database: admin
+
+
+
 

@@ -1,0 +1,37 @@
+
+Interface CommandLineRunner
+
+A interface `CommandLineRunner` faz parte do ecossistema Spring Framework, especificamente do módulo Spring Boot. Ela é uma maneira de executar código
+ao iniciar uma aplicação Spring Boot. A principal função de uma classe que implementa essa interface é fornecer um método `run`, que será chamado
+automaticamente quando a aplicação Spring Boot for iniciada.
+
+A interface `CommandLineRunner` é projetada para ser usada em cenários em que você deseja realizar alguma inicialização, configuração ou execução de
+tarefas específicas quando a aplicação é iniciada, antes que a lógica principal da aplicação seja executada. Isso pode ser útil para tarefas como carga
+de dados iniciais, validação de configurações, inicialização de caches, entre outras coisas.
+
+Exemplo simples de como criar uma classe que implementa a interface `CommandLineRunner`:
+
+```java
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyCommandLineRunner implements CommandLineRunner {
+
+    @Override
+    public void run(String... args) throws Exception {
+        // Código a ser executado ao iniciar a aplicação
+        System.out.println("A aplicação foi iniciada e esta tarefa está sendo executada.");
+    }
+}
+```
+
+Neste exemplo, a classe `MyCommandLineRunner` implementa a interface `CommandLineRunner` e fornece uma implementação para o método `run`. Quando a
+aplicação Spring Boot é iniciada, o método `run` será executado automaticamente.
+
+Também pode ter várias classes que implementam `CommandLineRunner` e todas elas serão chamadas na ordem em que são registradas no contexto da aplicação.
+Isso permite que organize diferentes tarefas de inicialização em classes separadas.
+
+Lembre-se de que a interface `CommandLineRunner` é apenas uma das maneiras de executar código durante a inicialização de uma aplicação Spring Boot.
+Também pode usar outras interfaces, como `ApplicationRunner`, ou especificar métodos de inicialização usando anotações, dependendo das suas necessidades
+específicas.
