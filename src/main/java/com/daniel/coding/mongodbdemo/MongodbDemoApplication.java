@@ -17,7 +17,7 @@ public class MongodbDemoApplication {
 	}
 
 	/* O Script abaixo significa que eu quero executar algum código na inicialização do aplicativo*/
-	@Bean
+	//@Bean
 	public CommandLineRunner commandLineRunner(ProductRepository productRepository){
 		return args -> {
 			var product = Product.builder()
