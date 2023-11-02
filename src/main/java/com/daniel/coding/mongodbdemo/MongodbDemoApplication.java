@@ -1,5 +1,7 @@
 package com.daniel.coding.mongodbdemo;
 
+import com.daniel.coding.mongodbdemo.category.Category;
+import com.daniel.coding.mongodbdemo.category.CategoryRepository;
 import com.daniel.coding.mongodbdemo.product.Product;
 import com.daniel.coding.mongodbdemo.product.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -17,9 +19,17 @@ public class MongodbDemoApplication {
 	}
 
 	/* O Script abaixo significa que eu quero executar algum código na inicialização do aplicativo*/
-	//@Bean
-	public CommandLineRunner commandLineRunner(ProductRepository productRepository){
+	@Bean
+	public CommandLineRunner commandLineRunner(ProductRepository productRepository, CategoryRepository categoryRepository){
 		return args -> {
+
+			var category = Category.builder()
+					.name("Phones")
+					.description("Description Phone")
+					.build();
+
+			categoryRepository.insert(category);
+
 			var product = Product.builder()
 					.name("iPhone")
 					.description("Smart Phone")
