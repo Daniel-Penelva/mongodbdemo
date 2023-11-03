@@ -11,6 +11,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductController {
 
+    // Acessando com o Swagger - link: localhost:8080/swagger-ui/index.html
+
     private final ProductService productService;
 
     @PostMapping

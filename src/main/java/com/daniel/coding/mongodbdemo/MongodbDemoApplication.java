@@ -15,11 +15,11 @@ public class MongodbDemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MongodbDemoApplication.class, args);
 
-
+		// Acessando com o Swagger - link: localhost:8080/swagger-ui/index.html
 	}
 
 	/* O Script abaixo significa que eu quero executar algum código na inicialização do aplicativo*/
-	@Bean
+	//@Bean
 	public CommandLineRunner commandLineRunner(ProductRepository productRepository, CategoryRepository categoryRepository){
 		return args -> {
 
